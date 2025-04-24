@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deepak | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Deepak</h1>
+    <p>B.Tech CSE 2nd Year | Frontend Developer | Python Programmer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>Hi, I'm Deepak, a 2nd year B.Tech student specializing in Computer Science Engineering. I enjoy building responsive web applications and experimenting with Python scripts. I'm on a journey of constant learning and creativity.</p>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>HTML</h3><p>Semantic structure & accessible markup</p></div>
+      <div class="card"><h3>CSS</h3><p>Animations, Flexbox, Grid, Media Queries</p></div>
+      <div class="card"><h3>JavaScript</h3><p>Dynamic UI, ES6+, DOM Manipulation</p></div>
+      <div class="card"><h3>Python</h3><p>Data structures, Algorithms, Scripting</p></div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Personal Portfolio</h3>
+        <p>A modern personal website to showcase my profile, projects, and contact info.</p>
+      </div>
+      <div class="card">
+        <h3>Python Task Automator</h3>
+        <p>A Python script to automate routine tasks like file organization and renaming.</p>
+      </div>
+      <div class="card">
+        <h3>JavaScript Calculator</h3>
+        <p>Fully functional calculator using vanilla JavaScript, styled with CSS Grid.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p>Email: <strong>deepak.dev@example.com</strong></p>
+    <p>GitHub: <strong>github.com/deepakdev</strong></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Deepak. All rights reserved.
+  </footer>
+
+  <script>
+    // Simple fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>
